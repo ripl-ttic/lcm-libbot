@@ -1,3 +1,7 @@
 [submodule "lcm"]
 	path = lcm-wrapper/lcm
 	url = https://github.com/lcm-proj/lcm.git
+[submodule "libbot-wrapper/libbot2"]
+	path = libbot-wrapper/libbot2
+	url = https://github.com/mrwalter/libbot2
+	branch = drake
