@@ -1,3 +1,5 @@
+CHECKOUT_DIR := lcm
+
 default_target: all
 
 # Default to a less-verbose build.  If you want all the gory compiler output,
@@ -41,7 +43,7 @@ configure: $(CHECKOUT_DIR)/CMakeLists.txt
 $(CHECKOUT_DIR)/CMakeLists.txt:
 	@git submodule init
 	@git submodule update
-		   
+
 
 clean:
 	-if [ -e pod-build/install_manifest.txt ]; then rm -f `cat pod-build/install_manifest.txt`; fi

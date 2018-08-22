@@ -1,8 +1,4 @@
-#REPO := https://github.com/RobotLocomotion/libbot2.git
-#BRANCH := drake
-REPO := https://github.com/mrwalter/libbot2.git
-BRANCH := patch-1
-CHECKOUT_DIR := libbot
+CHECKOUT_DIR := libbot2
 
 default_target: all
 
@@ -45,8 +41,8 @@ configure: $(CHECKOUT_DIR)/CMakeLists.txt
 		-DCMAKE_BUILD_TYPE=$(BUILD_TYPE) ../$(CHECKOUT_DIR)
 
 $(CHECKOUT_DIR)/CMakeLists.txt:
-	@git clone --single-branch -b $(BRANCH) $(REPO) $(CHECKOUT_DIR)
-
+	@git submodule init
+	@git submodule update
 
 clean:
 	-if [ -e pod-build/install_manifest.txt ]; then rm -f `cat pod-build/install_manifest.txt`; fi
